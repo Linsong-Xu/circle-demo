@@ -11,9 +11,24 @@ jobs:
           fingerprints:
             - "cf:88:7e:40:fe:53:f8:d0:8c:7e:c8:99:b6:d4:47:b0"
       - checkout
+      - restore_cache:
+          keys:
+            - dependencies
       - run:
           name: Install
           command: yarn install
+      - save_cache:
+          path:
+            - node_modules
+          key: dependencies
       - run:
           name: Build
           command: yarn build
+      - run:
+          name: Prepare shell commands
+          # shell chmod +x 赋予执行权限
+          # 执行shell脚本
+          command: chmod +x scripts/deploy.sh
+      - run:
+          name: Run Deploy to Github pages
+          command: ./scripts/deploy.sh
