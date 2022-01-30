@@ -5,6 +5,8 @@ set -e
 
 # 打印当前的工作路径
 pwd
+echo 'work path files'
+ls -la
 remote=$(git config remote.origin.url)
 
 echo 'remote is: '$remote
@@ -18,6 +20,8 @@ git config --global user.email "$GH_EMAIL"
 git config --global user.name "$GH_NAME"
 git init
 git remote add --fetch origin "$remote"
+echo 'directory gh-pages-branch files'
+ls -la
 
 echo 'email is: '$GH_EMAIL
 echo 'name is: '$GH_NAME
