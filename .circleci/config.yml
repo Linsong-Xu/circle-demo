@@ -24,11 +24,11 @@ jobs:
       - run:
           name: Build
           command: yarn build
-      - run:
-          name: Prepare shell commands
-          # shell chmod +x 赋予执行权限
-          # 执行shell脚本
-          command: chmod +x scripts/deploy.sh
-      - run:
-          name: Run Deploy to Github pages
-          command: ./scripts/deploy.sh
+#      - run:
+#          name: Prepare shell commands
+#          # shell chmod +x 赋予执行权限
+#          # 执行shell脚本
+#          command: chmod +x scripts/deploy.sh
+#      - run:
+#          name: Run Deploy to Github pages
+#          command: ./scripts/deploy.sh
